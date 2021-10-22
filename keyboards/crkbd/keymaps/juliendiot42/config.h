@@ -50,5 +50,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define RGBLIGHT_VAL_STEP 5
 #endif
 
+#ifdef RGB_MATRIX_ENABLE
+// need to free memory:
+#define DISABLE_RGB_MATRIX_RAINBOW_BEACON
+#define DISABLE_RGB_MATRIX_RAINBOW_PINWHEELS
+#define DISABLE_RGB_MATRIX_CYCLE_SPIRAL
+#define DISABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
+#define DISABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
+#endif
+
 #define OLED_FONT_H "keyboards/crkbd/keymaps/juliendiot42/glcdfont.c"
 #define OLED_DISABLE_TIMEOUT
