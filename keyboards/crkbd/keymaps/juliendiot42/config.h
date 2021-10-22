@@ -28,6 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
+//#define SSD1306OLED
+
 #define USE_SERIAL_PD2
 
 #define TAPPING_FORCE_HOLD
@@ -36,14 +38,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef RGBLIGHT_ENABLE
 #    undef RGBLED_NUM
 #    define RGBLIGHT_ANIMATIONS
-#    define RGBLED_NUM 27
+#    define RGBLED_NUM       54 // Number of LEDs
+// I had to redefine GBLED_SPLIT in crkbd/rev1/config.h
 #    define RGBLIGHT_LAYERS
 #    define RGBLIGHT_DEFAULT_HUE 0
-#    define RGBLIGHT_DEFAULT_SAT UINT8_MAX
+//#    define RGBLIGHT_DEFAULT_SAT UINT8_MAX
+#    define RGBLIGHT_DEFAULT_SAT 0
 #    define RGBLIGHT_LIMIT_VAL 120
-#    define RGBLIGHT_HUE_STEP 10
-#    define RGBLIGHT_SAT_STEP 17
-#    define RGBLIGHT_VAL_STEP 17
+#    define RGBLIGHT_HUE_STEP 5
+#    define RGBLIGHT_SAT_STEP 5
+#    define RGBLIGHT_VAL_STEP 5
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/keymaps/juliendiot42/glcdfont.c"
