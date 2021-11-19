@@ -31,10 +31,20 @@ enum custom_keycodes {
     LAYER3,
     LAYER4,
 };
+// Tap Dance declarations
+enum {
+    TD_RALT_APP,
+};
+
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_RALT_APP] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_APP),
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
- [_LAYER0] = LAYOUT(KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, KC_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_LALT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_DEL, KC_LGUI, LT(1,KC_SPC), KC_LSFT, KC_LCTL, LT(2,KC_ENT), KC_RALT),
+ [_LAYER0] = LAYOUT(KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, KC_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_LALT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_DEL, KC_LGUI, LT(1,KC_SPC), KC_LSFT, KC_LCTL, LT(2,KC_ENT), TD(TD_RALT_APP)),
 
 [_LAYER1] = LAYOUT(KC_TAB, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC, KC_ESC, KC_PGUP, KC_NO, KC_WH_D, KC_WH_U, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_NO, KC_LALT, KC_PGDN, KC_CUT, KC_COPY, KC_PSTE, KC_NO, KC_NO, KC_HOME, KC_END, KC_DOT, KC_NO, KC_DEL, KC_LGUI, KC_TRNS, KC_LSFT, KC_LCTL, MO(3), KC_RALT),
 
@@ -165,6 +175,12 @@ void oled_task_user(void) {
 }
 
 #endif  // OLED_ENABLE
+
+
+
+
+
+
 
 // // Light LEDs 6 to 9 and 12 to 15 red when caps lock is active. Hard to ignore!
 // const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
