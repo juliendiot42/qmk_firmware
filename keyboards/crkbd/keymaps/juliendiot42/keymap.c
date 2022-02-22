@@ -63,10 +63,10 @@ KC_LALT,   KC_NO,    KC_NO,    KC_NO,    KC_EQL,    KC_MINS,            KC_PLUS,
                               KC_LGUI,    MO(3),    KC_LCTL,           KC_RCTL,    KC_TRNS,    KC_RALT),
 
 [_LAYER3] = LAYOUT(
-KC_F14,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,              KC_PSCR,    KC_NO,      KC_NO,    KC_NO,    KC_VOLD,    KC_VOLU,
+KC_F14,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,              KC_PSCR,    KC_NO,      KC_CAPS,    KC_NO,    KC_VOLD,    KC_VOLU,
 KC_F13,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,             KC_MS_L,    KC_MS_D,    KC_MS_U,  KC_MS_R,  KC_MUTE,    KC_MPLY,
 KC_LCTL,   KC_LSFT,  KC_F11,   KC_F12,   KC_NO,    KC_HENK,            KC_BTN1,    KC_BTN3,    KC_BTN2,  KC_NO,    KC_RSFT,    KC_RCTL,
-                              KC_LALT,    KC_NO,    KC_CAPS,           RESET,    KC_NO,    TO(4)),
+                              KC_LALT,    KC_NO,    KC_LSFT,           KC_LCTL,    KC_NO,    TO(4)),
 
 [_LAYER4] = LAYOUT(
 RGB_SPI,    RGB_VAI,    RGB_SAI,    RGB_HUI,    RGB_MOD,    RGB_TOG,               BL_TOGG,    BL_STEP,    BL_BRTG,    BL_INC,    KC_NO,    KC_NO,
