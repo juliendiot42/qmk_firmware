@@ -34,12 +34,31 @@ enum custom_keycodes {
 // Tap Dance declarations
 enum {
     TD_RALT_APP,
+    TD_MAIL,
 };
+
+
+
+// Tap dace function
+void dance_mail(qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+  case 1:
+    SEND_STRING ("juliendiot42@gmail.com");
+    break;
+  case 2:
+    SEND_STRING ("julien.diot@ut-biomet.org");
+    break;
+  case 3:
+    SEND_STRING ("julien.d@listenfield.com");
+    break;
+  }
+}
 
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
     [TD_RALT_APP] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_APP),
+    [TD_MAIL] = ACTION_TAP_DANCE_FN(dance_mail),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -64,7 +83,7 @@ KC_LALT,   KC_NO,    KC_NO,    KC_NO,    KC_EQL,    KC_MINS,            KC_PLUS,
 
 [_LAYER3] = LAYOUT(
 KC_F14,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,              KC_PSCR,    KC_NO,      KC_CAPS,    KC_NO,    KC_VOLD,    KC_VOLU,
-KC_F13,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,             KC_MS_L,    KC_MS_D,    KC_MS_U,  KC_MS_R,  KC_MUTE,    KC_MPLY,
+KC_F13,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,             KC_MS_L,    TD(TD_MAIL),    KC_MS_U,  KC_MS_R,  KC_MUTE,    KC_MPLY,
 KC_LCTL,   KC_LSFT,  KC_F11,   KC_F12,   KC_NO,    KC_HENK,            KC_BTN1,    KC_BTN3,    KC_BTN2,  KC_NO,    KC_RSFT,    KC_RCTL,
                               KC_LALT,    KC_NO,    KC_LSFT,           KC_LCTL,    KC_NO,    TO(4)),
 
@@ -182,6 +201,7 @@ void render_bootmagic_status(bool status) {
 
 void oled_render_logo(void) {
     static const char PROGMEM crkbd_logo[] = {0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94, 0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0xAA, 0xAB, 0xAC, 0xAD, 0xAE, 0xAF, 0xB0, 0xB1, 0xB2, 0xB3, 0xB4, 0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCC, 0xCD, 0xCE, 0xCF, 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0x00};
+    /* static const char PROGMEM crkbd_logo[] = {}; */
     oled_write_P(crkbd_logo, false);
 }
 

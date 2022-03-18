@@ -1,8 +1,10 @@
 OLED_ENABLE = yes
 OLED_DRIVER = SSD1306
 RGBLIGHT_ENABLE = yes
-#RGB_MATRIX_ENABLE = yes
+# RGBLIGHT_ENABLE = no
+# RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_ENABLE = no
 TAP_DANCE_ENABLE = yes
-SLEEP_LED_ENABLE = yes
+SLEEP_LED_ENABLE = no
 MOUSEKEY_ENABLE=no
-this_dir=keyboards/crkbd/keymaps/juliendiot42
+# this_dir=keyboards/crkbd/keymaps/juliendiot42
