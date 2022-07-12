@@ -46,7 +46,7 @@ void dance_mail(qk_tap_dance_state_t *state, void *user_data) {
     SEND_STRING ("juliendiot42@gmail.com");
     break;
   case 2:
-    SEND_STRING ("julien.diot@ut-biomet.org");
+    SEND_STRING ("juliendiot@ut-biomet.org");
     break;
   case 3:
     SEND_STRING ("julien.d@listenfield.com");
@@ -56,7 +56,7 @@ void dance_mail(qk_tap_dance_state_t *state, void *user_data) {
 
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
+    // Tap once for RALT, twice for menue
     [TD_RALT_APP] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_APP),
     [TD_MAIL] = ACTION_TAP_DANCE_FN(dance_mail),
 };
@@ -70,22 +70,22 @@ KC_LALT,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  
                         KC_LGUI, LT(1,KC_SPC), KC_LSFT,         KC_LCTL, LT(2,KC_ENT), TD(TD_RALT_APP)),
 
 [_LAYER1] = LAYOUT(
-KC_TAB,    KC_1,     KC_2,    KC_3,    KC_4,    KC_5,            KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC,
-KC_ESC,    KC_PGUP,  KC_NO,   KC_WH_D, KC_WH_U, KC_NO,           KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_NO,    KC_NO,
-KC_LALT,   KC_PGDN,  KC_CUT,  KC_COPY, KC_PSTE, KC_NO,           KC_NO,    KC_HOME,  KC_END,   KC_DOT,   KC_NO,    KC_DEL,
-                        KC_LGUI, KC_TRNS, KC_LSFT,               KC_LCTL, MO(3),    KC_RALT),
+KC_TAB,   KC_1,     KC_2,    KC_3,    KC_4,    KC_5,            KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC,
+KC_ESC,   KC_PGUP,  KC_NO,   KC_WH_D, KC_WH_U, KC_EQL,           KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_NO,    KC_NO,
+KC_LALT,  KC_PGDN,  KC_CUT,  KC_COPY, KC_PSTE, KC_MINS,         KC_PLUS,  KC_HOME,  KC_END,   KC_DOT,   KC_COMM,    KC_DEL,
+                       KC_LGUI, KC_TRNS, KC_LSFT,               KC_LCTL, MO(3),    KC_RALT),
 
 [_LAYER2] = LAYOUT(
 KC_TAB,    KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,    KC_PERC,            KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_BSPC,
 KC_ESC,    KC_NO,    KC_TILD,  KC_LCBR,  KC_LPRN,   KC_LBRC,            KC_RBRC,    KC_RPRN,    KC_RCBR,    KC_BSLS,    KC_GRV,     KC_NO,
 KC_LALT,   KC_NO,    KC_NO,    KC_NO,    KC_EQL,    KC_MINS,            KC_PLUS,    KC_UNDS,    KC_PIPE,    KC_NO,      KC_NO,      KC_DEL,
-                              KC_LGUI,    MO(3),    KC_LCTL,           KC_RCTL,    KC_TRNS,    KC_RALT),
+                              KC_LGUI,    MO(3),    KC_LCTL,            KC_RCTL,    KC_TRNS,    KC_RALT),
 
 [_LAYER3] = LAYOUT(
 KC_F14,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,              KC_PSCR,    KC_NO,      KC_CAPS,    KC_NO,    KC_VOLD,    KC_VOLU,
 KC_F13,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,             KC_MS_L,    TD(TD_MAIL),    KC_MS_U,  KC_MS_R,  KC_MUTE,    KC_MPLY,
-KC_LCTL,   KC_LSFT,  KC_F11,   KC_F12,   KC_NO,    KC_HENK,            KC_BTN1,    KC_BTN3,    KC_BTN2,  KC_NO,    KC_RSFT,    KC_RCTL,
-                              KC_LALT,    KC_NO,    KC_LSFT,           KC_LCTL,    KC_NO,    TO(4)),
+KC_LALT,   KC_LSFT,  KC_F11,   KC_F12,   KC_NO,    KC_HENK,            KC_BTN1,    KC_BTN3,    KC_BTN2,  KC_NO,    KC_RSFT,    KC_RCTL,
+                            KC_LALT,    KC_TRNS,    KC_LSFT,           KC_LCTL,    KC_TRNS,    TO(4)),
 
 [_LAYER4] = LAYOUT(
 RGB_SPI,    RGB_VAI,    RGB_SAI,    RGB_HUI,    RGB_MOD,    RGB_TOG,               BL_TOGG,    BL_STEP,    BL_BRTG,    BL_INC,    KC_NO,    KC_NO,
