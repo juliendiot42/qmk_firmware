@@ -1,3 +1,26 @@
+
+
+
+## Note Julien:
+
+Build:
+
+```sh
+qmk compile -kb crkbd -km juliendiot42
+```
+
+Flash:
+
+```sh
+sudo qmk flash -kb crkbd -km juliendiot42
+```
+
+> `sudo` if not it waits for "the device to be writable" but it doesn't happen.
+
+
+
+
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
